@@ -235,3 +235,73 @@ Processing by TweetsController#create as */*
 Completed 200 OK in 265ms (Views: 0.6ms | ActiveRecord: 124.7ms | Allocations: 2279)
 
 
+Started GET "/tweets" for ::1 at 2021-02-23 22:30:40 -0500
+Processing by TweetsController#index as */*
+  Parameters: {"title"=>"Fantasy me", "content"=>"I can't have enough oversized leather jackets and crop tops", "author"=>"Buffy Summers", "tweet"=>{"title"=>"Fantasy me", "content"=>"I can't have enough oversized leather jackets and crop tops", "author"=>"Buffy Summers"}}
+  [1m[36mTweet Load (32.0ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 107ms (Views: 23.6ms | ActiveRecord: 141.4ms | Allocations: 4719)
+
+
+Started PUT "/tweets/11" for ::1 at 2021-02-23 22:31:48 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"title"=>"Wrong place, wrong time", "id"=>"11", "tweet"=>{"title"=>"Wrong place, wrong time"}}
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 5.2ms | Allocations: 762)
+
+
+Started PUT "/tweets/11" for ::1 at 2021-02-23 22:32:12 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"title"=>"Wrong place, wrong time", "id"=>"11", "tweet"=>{"title"=>"Wrong place, wrong time"}}
+  [1m[36mTweet Load (0.9ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 604)
+
+
+Started PATCH "/tweets/11" for ::1 at 2021-02-23 22:32:18 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"title"=>"Wrong place, wrong time", "id"=>"11", "tweet"=>{"title"=>"Wrong place, wrong time"}}
+  [1m[36mTweet Load (0.9ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 31ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 603)
+
+
+Started PUT "/tweets/11" for ::1 at 2021-02-23 22:37:06 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"wrong place wrong time", "content"=>"", "author"=>""}, "id"=>"11"}
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 604)
+
+
+Started PUT "/tweets/11" for ::1 at 2021-02-23 22:37:44 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"wrong place wrong time"}, "id"=>"11"}
+  [1m[36mTweet Load (0.9ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 603)
+
+
+Started PUT "/tweets/11" for ::1 at 2021-02-23 22:39:15 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"wrong place wrong time", "content"=>"kickin ass taking names", "author"=>"willow"}, "id"=>"11"}
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 603)
+
+
+Started PUT "/tweets/11" for ::1 at 2021-02-23 22:41:41 -0500
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"title"=>"wrong place wrong time", "content"=>"kickin ass taking names", "author"=>"willow"}, "id"=>"11"}
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:27:in `update'
+  [1m[36mTweet Update (4.5ms)[0m  [1m[33mUPDATE "tweets" SET "title" = $1, "content" = $2, "author" = $3, "updated_at" = $4 WHERE "tweets"."id" = $5[0m  [["title", "wrong place wrong time"], ["content", "kickin ass taking names"], ["author", "willow"], ["updated_at", "2021-02-24 03:41:41.745828"], ["id", 11]]
+  ↳ app/controllers/tweets_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:27:in `update'
+Completed 200 OK in 82ms (Views: 0.6ms | ActiveRecord: 36.9ms | Allocations: 5828)
+
+
